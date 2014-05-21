@@ -3,6 +3,8 @@ var express = require('express'),
     five = require("johnny-five"),
     board = new five.Board(),
     app = express(),
+    arDrone = require('ar-drone'),
+    droneClient = arDrone.createClient(),
     staticPath = __dirname + "/";
 
 var motorRight, motorLeft, motorUp, motorDown, fire;
