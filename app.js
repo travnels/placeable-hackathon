@@ -1,7 +1,7 @@
 var express = require('express'),
     util = require('util'),
-    five = require("johnny-five"),
-    board = new five.Board(),
+   five = require("johnny-five"),
+   // board = new five.Board(),
     app = express(),
     arDrone = require('ar-drone'),
     droneClient = arDrone.createClient(),
@@ -9,13 +9,25 @@ var express = require('express'),
 
 var motorRight, motorLeft, motorUp, motorDown, fire;
 
-board.on("ready", function() {
-    motorRight = new five.Motor(9);
-    motorLeft = new five.Motor(8);
-    motorUp = new five.Motor(10);
-    motorDown = new five.Motor(11);
-    fire = new five.Motor(12);
-    util.debug('init complete');
+// board.on("ready", function() {
+//     motorRight = new five.Motor(9);
+//     motorLeft = new five.Motor(8);
+//     motorUp = new five.Motor(10);
+//     motorDown = new five.Motor(11);
+//     fire = new five.Motor(12);
+//     util.debug('init complete');
+// });
+
+app.put('/takeoff', function(req,res) {
+    droneClient.takeoff();
+    console.log("takeoff")
+    res.send(200);
+});
+
+app.put('/land', function(req,res) {
+    droneClient.land();
+    console.log("land")
+    res.send(200);
 });
 
 app.put('/motorRightOn', function(req,res) {

@@ -1,3 +1,19 @@
+$("#takeoff").live("click",function() {
+    console.log(' takeoff clicked');
+    $.ajax({
+        'url' : 'http://localhost:8000/takeoff',
+        'type' : 'POST'
+    });
+});
+
+$("#land").live("click",function() {
+    console.log(' land clicked');
+    $.ajax({
+        'url' : 'http://localhost:8000/land',
+        'type' : 'POST'
+    });
+});
+
 $("#leftButton").live("vmousedown",function() {
     console.log(' Left Button has been clicked');
 
