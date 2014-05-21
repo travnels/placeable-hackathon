@@ -18,6 +18,23 @@ var motorRight, motorLeft, motorUp, motorDown, fire;
 //     util.debug('init complete');
 // });
 
+app.post('/handlebiz', function(req,res) {
+    console.log("handlebiz")
+    droneClient.takeoff();
+    droneClient
+      .after(1000, function() {
+        this.clockwise(0.5);
+      })
+      // .after(1000, function() {
+      //   this.animate('flipLeft', 15);
+      // })
+      .after(1000, function() {
+        this.stop();
+        this.land();
+      });
+    res.send(200);
+});
+
 app.post('/takeoff', function(req,res) {
     droneClient.takeoff();
     console.log("takeoff")
@@ -95,6 +112,6 @@ app.put('/fireOff', function(req,res) {
 });
 app.use(express.static(staticPath));
 
-app.listen(8000);
+app.listen(3000);
 
 util.debug('Server running');
