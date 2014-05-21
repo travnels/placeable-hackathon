@@ -18,13 +18,13 @@ var motorRight, motorLeft, motorUp, motorDown, fire;
 //     util.debug('init complete');
 // });
 
-app.put('/takeoff', function(req,res) {
+app.post('/takeoff', function(req,res) {
     droneClient.takeoff();
     console.log("takeoff")
     res.send(200);
 });
 
-app.put('/land', function(req,res) {
+app.post('/land', function(req,res) {
     droneClient.land();
     console.log("land")
     res.send(200);
