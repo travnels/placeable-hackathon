@@ -12,17 +12,14 @@ $(function() {
 
     $("#land").live("click",function() {
         console.log(' land clicked');
-        $.ajax({
-            'url' : 'http://localhost:3000/land',
-            'type' : 'POST'
-        });
+        landDrone();
     });
 
     $("#leftButton").live("vmousedown",function() {
         console.log(' Left Button has been clicked');
 
         $.ajax({
-            'url' : 'http://localhost:3000/motorLeftOn',
+            'url' : '/motorLeftOn',
             'type' : 'PUT'
         });
     })
@@ -31,7 +28,7 @@ $(function() {
         console.log(' Left Button has been unclicked');
 
         $.ajax({
-            'url' : 'http://localhost:3000/motorLeftOff',
+            'url' : '/motorLeftOff',
             'type' : 'PUT'
         });
     })
@@ -40,7 +37,7 @@ $(function() {
         console.log(' Right Button has been unclicked');
 
         $.ajax({
-            'url' : 'http://localhost:3000/motorRightOn',
+            'url' : '/motorRightOn',
             'type' : 'PUT'
         });
     })
@@ -49,7 +46,7 @@ $(function() {
         console.log(' Right Button has been unclicked');
 
         $.ajax({
-            'url' : 'http://localhost:3000/motorRightOff',
+            'url' : '/motorRightOff',
             'type' : 'PUT'
         });
     })
@@ -58,7 +55,7 @@ $(function() {
         console.log(' Up Button has been unclicked');
 
         $.ajax({
-            'url' : 'http://localhost:3000/motorUpOn',
+            'url' : '/motorUpOn',
             'type' : 'PUT'
         });
     })
@@ -67,7 +64,7 @@ $(function() {
         console.log(' Up Button has been unclicked');
 
         $.ajax({
-            'url' : 'http://localhost:3000/motorUpOff',
+            'url' : '/motorUpOff',
             'type' : 'PUT'
         });
     })
@@ -76,7 +73,7 @@ $(function() {
         console.log(' Down Button has been unclicked');
 
         $.ajax({
-            'url' : 'http://localhost:3000/motorDownOn',
+            'url' : '/motorDownOn',
             'type' : 'PUT'
         });
     })
@@ -85,7 +82,7 @@ $(function() {
         console.log(' Down Button has been unclicked');
 
         $.ajax({
-            'url' : 'http://localhost:3000/motorDownOff',
+            'url' : '/motorDownOff',
             'type' : 'PUT'
         });
     })
@@ -94,7 +91,7 @@ $(function() {
         console.log(' Fire Button has been unclicked');
 
         $.ajax({
-            'url' : 'http://localhost:3000/fireOn',
+            'url' : '/fireOn',
             'type' : 'PUT'
         });
     })
@@ -103,20 +100,26 @@ $(function() {
         console.log(' Fire Button has been unclicked');
 
         $.ajax({
-            'url' : 'http://localhost:3000/fireOff',
+            'url' : '/fireOff',
             'type' : 'PUT'
         });
     })
 
     launchDrone = function() {
         $.ajax({
-            'url' : 'http://localhost:3000/takeoff',
+            'url' : '/takeoff',
             'type' : 'POST'
         });
     };
+    landDrone = function() {
+        $.ajax({
+            'url' : '/land',
+            'type' : 'POST'
+        });
+    }
     handlebiz = function() {
         $.ajax({
-            'url' : 'http://localhost:3000/handlebiz',
+            'url' : '/handlebiz',
             'type' : 'POST'
         });
     };
@@ -126,5 +129,6 @@ $(function() {
     });
     $("#button").bind('touchend mouseup', function(){
         $(this).removeClass('active');
+        landDrone();
     });
 });

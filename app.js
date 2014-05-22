@@ -28,14 +28,14 @@ app.post('/handlebiz', function(req,res) {
     droneClient
       .after(1000, function() {
         this.clockwise(0.5);
-      })
-      .after(5000, function() {
-        this.animate('flipLeft', 15);
-      })
-      .after(1000, function() {
-        this.stop();
-        this.land();
       });
+      // .after(5000, function() {
+      //   this.animate('flipLeft', 15);
+      // })
+      // .after(1000, function() {
+      //   this.stop();
+      //   this.land();
+      // });
     res.send(200);
 });
 
