@@ -9,7 +9,7 @@
     <script src="js/jquery-1.8.2.min.js"></script>
     <script src="js/jquery.mobile-1.2.0.min.js"></script>
 
-    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
     <script text="text/javascript" src="js/index.js"></script>
 </head>
 <body>
@@ -20,12 +20,15 @@
         </h1>
    </div>
     <div data-role="content" style="padding: 15px">
-        <div>
-            <button type="button" id="upButton">Up</button>
-            <button type="button" id="downButton">Down</button>
-            <button type="button" id="leftButton">Left</button>
-            <button type="button" id="rightButton">Right</button>
-            <button type="button" id="fireButton">Fire!</button>
+        <div class="buttonCont">
+            <div class="button upDown"><button type="button" id="upButton">Up</button></div>
+            
+            <div class="button middle"><button type="button" id="leftButton">Left</button></div>
+            <div class="button middle fire"><button type="button" id="fireButton">Fire!</button></div>
+            <div class="button middle"><button type="button" id="rightButton">Right</button></div>
+            
+
+            <div class="button upDown"><button type="button" id="downButton">Down</button></div>
         </div>
     </div>
 </div>

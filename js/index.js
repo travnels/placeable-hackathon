@@ -76,51 +76,51 @@ $(function() {
         landDrone();
     });
 
-    $("#leftButton").live("vmousedown",function() {
+    $("#leftButton").live("vmousedown touchstart",function() {
         console.log(' Left Button has been clicked');
         leftButton();
         
     });
-    $("#leftButton").live("vmouseup",function() {
+    $("#leftButton").live("vmouseup touchend",function() {
         console.log(' Left Button has been unclicked');
         leftButtonStop();
         
     });
-    $("#rightButton").live("vmousedown",function() {
+    $("#rightButton").live("vmousedown touchstart",function() {
         console.log(' Right Button has been unclicked');
 
         rightButton();
     });
-    $("#upButton").live("vmouseup",function() {
+    $("#upButton").live("vmouseup touchend",function() {
         console.log(' Up Button has been unclicked');
         upButtonStop();
 
     });
-    $("#downButton").live("vmousedown",function() {
+    $("#downButton").live("vmousedown touchstart",function() {
         console.log(' Down Button has been unclicked');
         downButton();
     });
 
-    $("#downButton").live("vmouseup",function() {
+    $("#downButton").live("vmouseup touchend",function() {
         console.log(' Down Button has been unclicked');
         downButtonStop();
         
     });
-    $("#fireButton").live("vmousedown",function() {
+    $("#fireButton").live("vmousedown touchstart",function() {
         console.log(' Fire Button has been unclicked');
         fireButton();
         
     });
-    $("#fireButton").live("vmouseup",function() {
+    $("#fireButton").live("vmouseup touchend",function() {
         console.log(' Fire Button has been unclicked');
         fireButtonStop();
 
     });
-    $("#rightButton").live("vmouseup",function() {
+    $("#rightButton").live("vmouseup touchend",function() {
         console.log(' Right Button has been unclicked');
         rightButtonStop();
     });
-    $("#upButton").live("vmousedown",function() {
+    $("#upButton").live("vmousedown touchstart",function() {
         console.log(' Up Button has been unclicked');
         upButton();
         
