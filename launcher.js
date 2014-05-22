@@ -1,54 +1,28 @@
 var express = require('express'),
     util = require('util'),
-   five = require("johnny-five"),
-   // board = new five.Board(),
+    five = require("johnny-five"),
     app = express(),
-    arDrone = require('ar-drone'),
-    droneClient = arDrone.createClient(),
     staticPath = __dirname + "/";
 
 var motorRight, motorLeft, motorUp, motorDown, fire;
 
-// board.on("ready", function() {
-//     motorRight = new five.Motor(9);
-//     motorLeft = new five.Motor(8);
-//     motorUp = new five.Motor(10);
-//     motorDown = new five.Motor(11);
-//     fire = new five.Motor(12);
-//     util.debug('init complete');
-// });
+var board = new five.Board();
 
-app.get('/button', function(req, res) {
-    res.sendfile('button.html');
+board.on("ready", function() {
+    motorRight = new five.Motor(9);
+    motorLeft = new five.Motor(8);
+    motorUp = new five.Motor(10);
+    motorDown = new five.Motor(11);
+    fire = new five.Motor(12);
+    util.debug('init complete');
 });
+
 
 app.post('/handlebiz', function(req,res) {
-    console.log("handlebiz")
-    droneClient.takeoff();
-    droneClient
-      .after(1000, function() {
-        this.clockwise(0.5);
-      });
-      // .after(5000, function() {
-      //   this.animate('flipLeft', 15);
-      // })
-      // .after(1000, function() {
-      //   this.stop();
-      //   this.land();
-      // });
-    res.send(200);
-});
+    motorRight.start();
+    wait (1)
+    motorRight.stop();
 
-app.post('/takeoff', function(req,res) {
-    droneClient.takeoff();
-    console.log("takeoff")
-    res.send(200);
-});
-
-app.post('/land', function(req,res) {
-    droneClient.land();
-    console.log("land")
-    res.send(200);
 });
 
 app.put('/motorRightOn', function(req,res) {
@@ -116,6 +90,6 @@ app.put('/fireOff', function(req,res) {
 });
 app.use(express.static(staticPath));
 
-app.listen(3000);
+app.listen(3001);
 
 util.debug('Server running');
