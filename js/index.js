@@ -143,7 +143,7 @@ $(function() {
             rightButton();
         }
         if (e.keyCode == 83 ) {
-            downButtonStop();
+            downButton();
         }
         if (e.keyCode == 13) {
             fireButton();
