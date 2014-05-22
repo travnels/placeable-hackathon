@@ -81,7 +81,6 @@ $(function() {
         leftButton();
         
     });
-
     $("#leftButton").live("vmouseup",function() {
         console.log(' Left Button has been unclicked');
         leftButtonStop();
@@ -97,10 +96,8 @@ $(function() {
         upButtonStop();
 
     });
-
     $("#downButton").live("vmousedown",function() {
         console.log(' Down Button has been unclicked');
-
         downButton();
     });
 
@@ -114,7 +111,6 @@ $(function() {
         fireButton();
         
     });
-
     $("#fireButton").live("vmouseup",function() {
         console.log(' Fire Button has been unclicked');
         fireButtonStop();
@@ -124,25 +120,24 @@ $(function() {
         console.log(' Right Button has been unclicked');
         rightButtonStop();
     });
-
     $("#upButton").live("vmousedown",function() {
         console.log(' Up Button has been unclicked');
         upButton();
         
     });
 
-    $('body').keypress(function(e) {
+    $('body').keydown(function(e) {
         console.log(e);
-        if (e.keyCode == 97 ) {
+        if (e.keyCode == 65 ) {
             leftButton();
         }
-        if (e.keyCode == 119) {
+        if (e.keyCode == 87) {
             upButton();
         }
-        if (e.keyCode == 115) {
+        if (e.keyCode == 68) {
             rightButton();
         }
-        if (e.keyCode == 100 ) {
+        if (e.keyCode == 83 ) {
             downButton();
         }
         if (e.keyCode == 13) {
