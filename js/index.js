@@ -1,5 +1,66 @@
 $(function() {
+    leftButton = function() {
+        $.ajax({
+            'url' : '/motorLeftOn',
+            'type' : 'PUT'
+        });
+    };
+    leftButtonStop = function() {
+        $.ajax({
+            'url' : '/motorLeftOff',
+            'type' : 'PUT'
+        });
+    };
+    rightButton = function() {
+        $.ajax({
+            'url' : '/motorRightOn',
+            'type' : 'PUT'
+        });
+    };
 
+    rightButtonStop = function() {
+        $.ajax({
+            'url' : '/motorRightOff',
+            'type' : 'PUT'
+        });
+    };
+    upButton = function() {
+        $.ajax({
+            'url' : '/motorUpOn',
+            'type' : 'PUT'
+        });
+    };
+    upButtonStop = function() {
+        $.ajax({
+            'url' : '/motorUpOff',
+            'type' : 'PUT'
+        });
+    };
+    downButtonStop = function() {
+        $.ajax({
+            'url' : '/motorDownOff',
+            'type' : 'PUT'
+        });
+    };
+
+    downButton = function() {
+        $.ajax({
+            'url' : '/motorDownOn',
+            'type' : 'PUT'
+        });
+    };
+    fireButton = function() {
+        $.ajax({
+            'url' : '/fireOn',
+            'type' : 'PUT'
+        });
+    };
+    fireButtonStop = function() {
+        $.ajax({
+            'url' : '/fireOff',
+            'type' : 'PUT'
+        });
+    };
     $("#handlebiz").live("click",function() {
         console.log(' handlebiz clicked');
         handlebiz();
@@ -26,62 +87,11 @@ $(function() {
         leftButtonStop();
         
     });
-    leftButton = function() {
-        $.ajax({
-            'url' : '/motorLeftOn',
-            'type' : 'PUT'
-        });
-    };
-    leftButtonStop = function() {
-        $.ajax({
-            'url' : '/motorLeftOff',
-            'type' : 'PUT'
-        });
-    };
-
     $("#rightButton").live("vmousedown",function() {
         console.log(' Right Button has been unclicked');
 
         rightButton();
     });
-
-    rightButton = function() {
-        $.ajax({
-            'url' : '/motorRightOn',
-            'type' : 'PUT'
-        });
-    };
-
-    rightButtonStop = function() {
-        $.ajax({
-            'url' : '/motorRightOff',
-            'type' : 'PUT'
-        });
-    };
-
-    $("#rightButton").live("vmouseup",function() {
-        console.log(' Right Button has been unclicked');
-        rightButtonStop();
-    });
-
-    $("#upButton").live("vmousedown",function() {
-        console.log(' Up Button has been unclicked');
-        upButton();
-        
-    });
-    upButton = function() {
-        $.ajax({
-            'url' : '/motorUpOn',
-            'type' : 'PUT'
-        });
-    };
-    upButtonStop = function() {
-        $.ajax({
-            'url' : '/motorUpOff',
-            'type' : 'PUT'
-        });
-    };
-
     $("#upButton").live("vmouseup",function() {
         console.log(' Up Button has been unclicked');
         upButtonStop();
@@ -98,44 +108,28 @@ $(function() {
         console.log(' Down Button has been unclicked');
         downButtonStop();
         
-    })
-    downButtonStop = function() {
-        $.ajax({
-            'url' : '/motorDownOff',
-            'type' : 'PUT'
-        });
-    };
-
-    downButton = function() {
-        $.ajax({
-            'url' : '/motorDownOn',
-            'type' : 'PUT'
-        });
-    };
-
+    });
     $("#fireButton").live("vmousedown",function() {
         console.log(' Fire Button has been unclicked');
         fireButton();
         
     });
-    fireButton = function() {
-        $.ajax({
-            'url' : '/fireOn',
-            'type' : 'PUT'
-        });
-    };
 
     $("#fireButton").live("vmouseup",function() {
         console.log(' Fire Button has been unclicked');
         fireButtonStop();
 
-    })
-    fireButtonStop = function() {
-        $.ajax({
-            'url' : '/fireOff',
-            'type' : 'PUT'
-        });
-    };
+    });
+    $("#rightButton").live("vmouseup",function() {
+        console.log(' Right Button has been unclicked');
+        rightButtonStop();
+    });
+
+    $("#upButton").live("vmousedown",function() {
+        console.log(' Up Button has been unclicked');
+        upButton();
+        
+    });
 
     $('body').keydown(function(e) {
         console.log(e);
