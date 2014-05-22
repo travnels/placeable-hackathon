@@ -131,18 +131,18 @@ $(function() {
         
     });
 
-    $('body').keydown(function(e) {
+    $('body').keypress(function(e) {
         console.log(e);
-        if (e.keyCode == 65 ) {
+        if (e.keyCode == 97 ) {
             leftButton();
         }
-        if (e.keyCode == 87) {
+        if (e.keyCode == 119) {
             upButton();
         }
-        if (e.keyCode == 68) {
+        if (e.keyCode == 115) {
             rightButton();
         }
-        if (e.keyCode == 83 ) {
+        if (e.keyCode == 100 ) {
             downButton();
         }
         if (e.keyCode == 13) {
