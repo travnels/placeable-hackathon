@@ -139,34 +139,38 @@ $(function() {
 
     $('body').keydown(function(e) {
         console.log(e);
-        if (e.keyCode == 97 || e.charCode == 97) {
+        if (e.keyCode == 65 ) {
             leftButton();
         }
-        if (e.keyCode == 119 || e.charCode == 119) {
+        if (e.keyCode == 87) {
             upButton();
         }
-        if (e.keyCode == 100 || e.charCode == 100) {
+        if (e.keyCode == 68) {
             rightButton();
         }
-        if (e.keyCode == 13 || e.charCode == 0) {
+        if (e.keyCode == 83 ) {
+            downButtonStop();
+        }
+        if (e.keyCode == 13) {
             fireButton();
         }
+
     });
     $('body').keyup(function(e) {
         console.log(e);
-        if (e.keyCode == 97 || e.charCode == 97) {
+        if (e.keyCode == 65 ) {
             leftButtonStop();
         }
-        if (e.keyCode == 119 || e.charCode == 119) {
+        if (e.keyCode == 87) {
             upButtonStop();
         }
-        if (e.keyCode == 100 || e.charCode == 100) {
+        if (e.keyCode == 68) {
             rightButtonStop();
         }
-        if (e.keyCode == 115 || e.charCode == 115) {
+        if (e.keyCode == 83 ) {
             downButtonStop();
         }
-        if (e.keyCode == 13 || e.charCode == 0) {
+        if (e.keyCode == 13) {
             fireButtonStop();
         }
     });
