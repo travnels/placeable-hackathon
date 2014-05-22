@@ -18,6 +18,10 @@ var motorRight, motorLeft, motorUp, motorDown, fire;
 //     util.debug('init complete');
 // });
 
+app.get('/button', function(req, res) {
+    res.sendfile('button.html');
+});
+
 app.post('/handlebiz', function(req,res) {
     console.log("handlebiz")
     droneClient.takeoff();
@@ -25,9 +29,9 @@ app.post('/handlebiz', function(req,res) {
       .after(1000, function() {
         this.clockwise(0.5);
       })
-      // .after(1000, function() {
-      //   this.animate('flipLeft', 15);
-      // })
+      .after(5000, function() {
+        this.animate('flipLeft', 15);
+      })
       .after(1000, function() {
         this.stop();
         this.land();
