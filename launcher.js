@@ -17,12 +17,34 @@ board.on("ready", function() {
     util.debug('init complete');
 });
 
-
 app.post('/handlebiz', function(req,res) {
+    console.log("handle biz")
     motorRight.start();
-    wait (1)
-    motorRight.stop();
+    setTimeout(function() {
+        motorRight.stop();
+        motorUp.start();
+        setTimeout(function() {
+            motorUp.stop();
+            motorDown.start();
+            setTimeout(function() {
+                motorDown.stop();
+                motorLeft.start();
+                setTimeout(function() {
+                    motorLeft.stop();
+                    motorRight.start();
+                    setTimeout(function() {
+                        motorRight.stop();
+                        fire.start();
+                        setTimeout(function() {
+                            fire.stop();
+                        }, 15000);
+                    }, 400);
+                }, 1500);
+            }, 600);
+        }, 500);
+    }, 1000);
 
+    res.send(200);
 });
 
 app.put('/motorRightOn', function(req,res) {
@@ -39,39 +61,39 @@ app.put('/motorRightOff', function(req,res) {
 
 app.put('/motorLeftOn', function(req,res) {
     motorLeft.start();
-    console.log("right on")
+    console.log("left on")
     res.send(200);
 });
 
 app.put('/motorLeftOff', function(req,res) {
     motorLeft.stop();
-    console.log("right off")
+    console.log("left off")
     res.send(200);
 });
 
 
 app.put('/motorUpOn', function(req,res) {
     motorUp.start();
-    console.log("right on")
+    console.log("up on")
     res.send(200);
 });
 
 app.put('/motorUpOff', function(req,res) {
     motorUp.stop();
-    console.log("right off")
+    console.log("up off")
     res.send(200);
 });
 
 
 app.put('/motorDownOn', function(req,res) {
     motorDown.start();
-    console.log("right on")
+    console.log("down on")
     res.send(200);
 });
 
 app.put('/motorDownOff', function(req,res) {
     motorDown.stop();
-    console.log("right off")
+    console.log("down off")
     res.send(200);
 });
 
