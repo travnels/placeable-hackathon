@@ -17,7 +17,7 @@ board.on("ready", function() {
     util.debug('init complete');
 });
 
-app.post('/handlebiz', function(req,res) {
+app.get('/handlebiz', function(req,res) {
     console.log("handle biz")
     motorRight.start();
     setTimeout(function() {
@@ -43,6 +43,16 @@ app.post('/handlebiz', function(req,res) {
             }, 600);
         }, 500);
     }, 1000);
+
+    res.send(200);
+});
+
+app.get('/like', function(req,res) {
+    console.log("handle biz")
+    fire.start();
+    setTimeout(function() {
+        fire.stop();
+    }, 3000);
 
     res.send(200);
 });
